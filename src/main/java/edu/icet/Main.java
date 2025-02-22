@@ -1,4 +1,4 @@
-package edu.ICET;
+package edu.icet;
 
 
 import org.springframework.boot.SpringApplication;
