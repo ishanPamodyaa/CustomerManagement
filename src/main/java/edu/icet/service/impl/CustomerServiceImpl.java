@@ -47,4 +47,32 @@ public class CustomerServiceImpl implements CustomerService {
 
          repocitory.deleteById(id);
     }
+
+    @Override
+    public void updateCustomer(Customer customer) {
+
+        repocitory.save(mapper.map(customer ,CustomerEntity.class));
+    }
+
+    @Override
+    public Customer searchById(Integer id) {
+
+      return mapper.map(repocitory.findById(id),Customer.class) ;
+    }
+
+    @Override
+    public List<Customer> searchByName(String name) {
+
+        List<Customer> customeerDto = new ArrayList<>();
+       mapper.map(repocitory.findByName(name),Customer.class);
+       List<CustomerEntity> allCustomerEntity = repocitory.findByName(name);
+
+       allCustomerEntity.forEach(customerEntity -> {
+           customeerDto.add(mapper.map(customerEntity ,Customer.class));
+       });
+
+       return customeerDto;
+
+
+    }
 }
