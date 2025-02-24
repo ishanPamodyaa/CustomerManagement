@@ -53,8 +53,18 @@ public class CustomerController {
     }
 
     @GetMapping("/search-by-name/{name}")
-    public List <Customer> searchById(@PathVariable String name){
+    public List <Customer> searchByName(@PathVariable String name){
         return service.searchByName(name);
+    }
+
+    @GetMapping("/search-by-address/{address}")
+    public List<Customer> searchByAddress(@PathVariable String address){
+        return service.searchByAddress(address);
+    }
+
+    @GetMapping("/search-by-text/{text}")
+    public List<Customer> searchByText(@PathVariable String text){
+        return service.searchByText(text);
     }
 
 }

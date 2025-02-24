@@ -72,7 +72,27 @@ public class CustomerServiceImpl implements CustomerService {
        });
 
        return customeerDto;
+    }
 
 
+
+    @Override
+    public List<Customer> searchByAddress(String address) {
+
+        List<Customer> customerDto = new ArrayList<>();
+
+        List<CustomerEntity> all = repocitory.findByAddress(address);
+
+        all.forEach(customerEntity -> {
+            customerDto.add(mapper.map(customerEntity ,Customer.class));
+        });
+
+        return customerDto;
+    }
+    public List<Customer> searchByText(String text){
+        List<Customer> customerDto = new ArrayList<>();
+        customerDto.addAll(searchByName(text));
+        customerDto.addAll(searchByAddress(text));
+        return customerDto;
     }
 }

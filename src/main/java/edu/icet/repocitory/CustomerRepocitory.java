@@ -8,5 +8,7 @@ import java.util.List;
 public interface CustomerRepocitory extends JpaRepository<CustomerEntity,Integer > {
 
     List<CustomerEntity> findByName(String name);
+    List<CustomerEntity> findByAddress(String address);
+
 }
 
