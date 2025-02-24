@@ -13,7 +13,7 @@ function loadCustomer() {
         console.log(customer.name);
         // let custData =document.createElement("tr");
         custData += `
-        <tr>
+        <tr class="text-center">
         <td>${customer.id}</td>
         <td>${customer.name}</td>
         <td>${customer.address}</td>
@@ -57,35 +57,7 @@ function addCustomer() {
   modelInstance.hide();
 }
 
-// function searchCustomerById() {
-//   let customerId = document.getElementById("search-id").value;
-//   console.log(customerId);
 
-//   fetch("http://localhost:8080/customer/search-by-id/" + customerId)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       console.log(data);
-
-//       let tableData = "";
-
-//       let cuustTable = document.getElementById("table-data-search-result");
-
-//       console.log(data.id + data.name);
-
-//       tableData = `
-//     <tr>
-//     <td>${data.id}</td>
-//     <td>${data.name}</td>
-//     <td>${data.address}</td>
-//     <td>${data.salary}</td>
-//     </tr>
-//     `;
-//       cuustTable.innerHTML = tableData;
-//     });
-// }
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').trigger('focus')
-// })
 
 function searchCustomerById() {
   console.log(" id enterd");
@@ -178,7 +150,7 @@ function searchCustomerByText() {
 
       data.forEach((customer) => {
         resultData += `
-      <tr>
+      <tr class="text-center">
       <td>${customer.id}</td>
       <td>${customer.name}</td>
       <td>${customer.address}</td>

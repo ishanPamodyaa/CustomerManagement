@@ -1,0 +1,17 @@
+.body-bg{
+    background-image: linear-gradient(rgb(133, 120, 192), rgb(214, 214, 186));
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+
+.tableZ{
+    
+    margin-top: 50px !important;
+
+}
+
+.heading{
+    margin-top: 50px !important;
+    font-size: 3rem;
+    color: rgb(49, 48, 47);
+}
